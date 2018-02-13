@@ -1,0 +1,18 @@
+cases\Example
+ [x] Example math
+
+cases\PHPExtensions
+ [x] Spl autoload register
+ [x] Gd info
+
+cases\PhpIniConfigurations
+ [x] Php ini configurations
+ [x] Error log
+ [x] Allow url
+ [x] Uploads
+ [x] Short tags
+ [x] Auto features
+ [x] Register globals
+ [x] Magic quotes
+ [x] Mysqli
+
