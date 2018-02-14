@@ -14,4 +14,19 @@ class PHPExtensionsTest extends TestCase
 	{
 		$this->assertTrue(function_exists("gd_info"));
 	}
+	
+	public function testCurlInit()
+	{
+		$this->assertTrue(function_exists("curl_init"));
+	}
+	
+	public function testMultiByteString()
+	{
+		$this->assertTrue(function_exists("mb_check_encoding"));
+	}
+
+	public function testXdebugInstalled()
+	{
+		$this->assertTrue(function_exists("xdebug_get_profiler_filename"));
+	}
 }
