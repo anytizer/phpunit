@@ -2,7 +2,7 @@ cases\PHPClasses
  [x] Simple xml element
  [x] Pdo
  [x] Pdo statement
- [ ] Sqlite
+ [x] Sqlite
 
 cases\PHPExtensions
  [x] Spl autoload register
@@ -12,7 +12,9 @@ cases\PHPExtensions
  [x] Xdebug installed
 
 cases\PhpIniConfigurations
- [x] Php ini configurations
+ [x] Error configurations
+ [x] Output control
+ [x] Time limits
  [x] Error log
  [x] Allow url
  [x] Uploads

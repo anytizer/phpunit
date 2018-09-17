@@ -8,18 +8,29 @@ class PhpIniConfigurationsTest extends TestCase
 	/**
 	 * Most common configurations
 	 */
-	public function testPhpIniConfigurations()
+	public function testErrorConfigurations()
 	{
-		$this->assertEquals(ini_get("allow_call_time_pass_reference"), false, "Allow call time pass by reference.");
-		$this->assertEquals(ini_get("default_charset"), "UTF-8", "Errors hidden.");
-		$this->assertEquals(ini_get("display_errors"), "stderr", "Errors hidden.");
+		$this->assertEquals(ini_get("display_errors"), "stderr", "Errors are always hidden.");
 		$this->assertEquals(ini_get("error_reporting"), E_ALL|E_STRICT, "Error Reporting is something else.");
+	}
+
+	public function testOutputControl()
+	{
+		/**
+		 * @todo UTF8MB4
+		 */
+		$this->assertEquals(ini_get("default_charset"), "UTF-8", "UTF8 character set");
 		$this->assertEquals(ini_get("ignore_user_abort"), true, "Ignore User Abort configuration.");
-		$this->assertEquals(ini_get("max_execution_time"), 0, "Max Execution Time");
-		$this->assertEquals(ini_get("max_input_time"), -1, "Max Input Time");
 		$this->assertEquals(ini_get("memory_limit"), -1, "Memory limit restrictions on this server.");
 		$this->assertEquals(ini_get("output_buffering"), 0, "Output Buffering.");
 		$this->assertEquals(ini_get("safe_mode"), false, "Safe Mode.");
+	}
+
+	public function testTimeLimits()
+	{
+		$this->assertEquals(ini_get("max_execution_time"), 0, "Max Execution Time");
+		$this->assertEquals(ini_get("max_input_time"), -1, "Max Input Time");
+		$this->assertEquals(ini_get("allow_call_time_pass_reference"), false, "Allow call time pass by reference.");
 		$this->assertEquals(ini_get("set_time_limit"), false, "Set Time Limit");
 	}
 
@@ -37,7 +48,7 @@ class PhpIniConfigurationsTest extends TestCase
 	 */
 	public function testAllowUrl()
 	{
-		$this->assertEquals(ini_get("allow_url_fopen"), false, "Allow URL FOpen.");
+		$this->assertEquals(ini_get("allow_url_fopen"), true, "Allow URL FOpen.");
 		$this->assertEquals(ini_get("allow_url_include"), false, "Allow URL Include.");
 	}
 
@@ -78,10 +89,10 @@ class PhpIniConfigurationsTest extends TestCase
 	{
 		$this->assertEquals(ini_get("register_globals"), false, "Register Globals.");
 		$this->assertEquals(ini_get("register_long_arrays"), false, "Register Long Arrays.");
-		$this->assertEquals(ini_get("request_order"), "GPC", "Request Order.");
+		$this->assertEquals(ini_get("request_order"), "GP", "Request Order.");
 		$this->assertEquals(ini_get("register_argc_argv"), true, "Request argc argv."); // not set
-		$this->assertEquals(ini_get("auto_globals_jit"), false, "Request argc argv.");
-		$this->assertEquals(ini_get("variables_order"), "GPCSE", "Variables Order.");
+		$this->assertEquals(ini_get("auto_globals_jit"), true, "Auto globals JIT.");
+		$this->assertEquals(ini_get("variables_order"), "GPCS", "Variables Order.");
 	}
 		
 	/**

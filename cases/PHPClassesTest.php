@@ -23,7 +23,8 @@ class PHPClassesTest extends TestCase
 	public function testSqlite()
 	{
 		// Probably through PDO Only
-		//$this->assertTrue(function_exists("sqlite_open"), "SQLite not found");
-		$this->markTestIncomplete();
+		$this->assertTrue(!function_exists("sqlite_open"), "SQLite not found");
+		$this->assertTrue(class_exists("\SQLite3"), "SQLite not found");
+		//$this->markTestIncomplete();
 	}
 }
