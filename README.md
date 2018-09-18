@@ -1,10 +1,10 @@
 # phpunit
-Simple PHP Unit - starter
+Simple PHPUnit starter toolkit.
 
-Rudimentary form of a PHP Unit Starter.
+Checks for:
+ * Composer installed
+ * Basic php.ini configurations
+ * Selected dxtensions
+ * Selected classes
 
-Has:
- * A math test
- * PHP .ini configurations
-
-Copy/paste and embed/configure this project in other projects to start your phpunit.
+Embed this project inside other projects to start your phpunit.
