@@ -1,3 +1,6 @@
+cases\IncludePath
+ [x] Composer included globally
+
 cases\PHPClasses
  [x] Simple xml element
  [x] Pdo
