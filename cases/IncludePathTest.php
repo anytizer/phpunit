@@ -5,6 +5,10 @@ use PHPUnit\Framework\TestCase;
 
 class IncludePathTest extends TestCase
 {
+	/**
+	 * php.ini auto includes Composer's global path
+	 * include_path = C:\Users\[USER]\AppData\Roaming\Composer;
+	 */
 	public function testComposerIncludedGlobally()
 	{
 		$paths = explode(PATH_SEPARATOR, ini_get("include_path"));
@@ -18,6 +22,6 @@ class IncludePathTest extends TestCase
 			}
 		}
 
-		$this->assertTrue($contains_composer, "Composer not found.");
+		$this->assertTrue($contains_composer, "Composer not included from global scope.");
 	}
 }

@@ -19,12 +19,14 @@ class PHPClassesTest extends TestCase
 	{
 		$this->assertTrue(class_exists("\PDOStatement"), "PDOStatement not found");
 	}
-	
+
+	/**
+	 * extension=pdo_sqlite
+	 * extension=sqlite3
+	 */
 	public function testSqlite()
 	{
-		// Probably through PDO Only
 		$this->assertTrue(!function_exists("sqlite_open"), "SQLite not found");
-		$this->assertTrue(class_exists("\SQLite3"), "SQLite not found");
-		//$this->markTestIncomplete();
+		$this->assertTrue(class_exists("\SQLite3"), "SQLite3 not found");
 	}
 }

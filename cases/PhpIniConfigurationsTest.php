@@ -11,19 +11,19 @@ class PhpIniConfigurationsTest extends TestCase
 	public function testErrorConfigurations()
 	{
 		$this->assertEquals(ini_get("display_errors"), "stderr", "Errors are always hidden.");
-		$this->assertEquals(ini_get("error_reporting"), E_ALL|E_STRICT, "Error Reporting is something else.");
+		$this->assertEquals(ini_get("error_reporting"), E_ALL|E_STRICT, "Error Reporting is limited.");
 	}
 
+	/**
+	 * @todo UTF8MB4
+	 */
 	public function testOutputControl()
 	{
-		/**
-		 * @todo UTF8MB4
-		 */
-		$this->assertEquals(ini_get("default_charset"), "UTF-8", "UTF8 character set");
+		$this->assertEquals(ini_get("default_charset"), "UTF-8", "UTF8 character set.");
 		$this->assertEquals(ini_get("ignore_user_abort"), true, "Ignore User Abort configuration.");
 		$this->assertEquals(ini_get("memory_limit"), -1, "Memory limit restrictions on this server.");
-		$this->assertEquals(ini_get("output_buffering"), 0, "Output Buffering.");
-		$this->assertEquals(ini_get("safe_mode"), false, "Safe Mode.");
+		$this->assertEquals(ini_get("output_buffering"), 0, "Output buffering.");
+		$this->assertEquals(ini_get("safe_mode"), false, "Safe mode.");
 	}
 
 	public function testTimeLimits()
@@ -31,7 +31,7 @@ class PhpIniConfigurationsTest extends TestCase
 		$this->assertEquals(ini_get("max_execution_time"), 0, "Max Execution Time");
 		$this->assertEquals(ini_get("max_input_time"), -1, "Max Input Time");
 		$this->assertEquals(ini_get("allow_call_time_pass_reference"), false, "Allow call time pass by reference.");
-		$this->assertEquals(ini_get("set_time_limit"), false, "Set Time Limit");
+		$this->assertEquals(ini_get("set_time_limit"), false, "Set time limit");
 	}
 
 	/**
