@@ -7,6 +7,7 @@ class XDebugInstalledTest extends TestCase
 {
 	/**
 	 * Install XDebug
+	 * @see https://xdebug.org/download.php
 	 *
 	 * [xDebug]
 	 * zend_extension="php_xdebug-*.dll"
