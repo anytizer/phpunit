@@ -12,7 +12,7 @@ cases\PHPExtensions
  [x] Gd info
  [x] Curl init
  [x] Multi byte string
- [x] Xdebug installed
+ [ ] Xdebug installed
 
 cases\PHPVersionCompare
  [x] Version requirements
@@ -31,5 +31,5 @@ cases\PhpIniConfigurations
  [x] Mysqli
 
 cases\XDebugInstalled
- [x] Version requirements
+ [ ] Version requirements
 
